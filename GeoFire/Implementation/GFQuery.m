@@ -17,7 +17,7 @@
 @interface GFQueryLocationInfo : NSObject
 
 @property (nonatomic) BOOL isInQuery;
-@property (nonatomic) CLLocation *location;
+@property (nonatomic, strong) CLLocation *location;
 @property (nonatomic, strong) GFGeoHash *geoHash;
 
 @end
