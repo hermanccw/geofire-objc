@@ -58,8 +58,8 @@
                         format:@"Not a valid geo location: [%f,%f]",
              location.coordinate.latitude, location.coordinate.longitude];
         }
-        self->_centerLocation = location;
-        self->_radius = radius;
+        self.centerLocation = location;
+        self.radius = radius;
     }
     return self;
 }
@@ -72,7 +72,7 @@
                         format:@"Not a valid geo location: [%f,%f]",
              center.coordinate.latitude, center.coordinate.longitude];
         }
-        self->_centerLocation = center;
+        self.centerLocation = center;
         [self searchCriteriaDidChange];
     }
 }
@@ -87,7 +87,7 @@
 - (void)setRadius:(double)radius
 {
     @synchronized(self) {
-        self->_radius = radius;
+        _radius = radius;
         [self searchCriteriaDidChange];
     }
 }
@@ -95,7 +95,7 @@
 - (double)radius
 {
     @synchronized(self) {
-        return self->_radius;
+        return _radius;
     }
 }
 
